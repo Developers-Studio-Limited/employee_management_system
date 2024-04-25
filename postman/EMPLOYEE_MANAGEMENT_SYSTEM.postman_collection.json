@@ -1,0 +1,1290 @@
+{
+	"info": {
+		"_postman_id": "8bc5acdd-3b8a-4fc4-aff8-590dcaf288da",
+		"name": "EMPLOYEE_MANAGEMENT_SYSTEM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33838769"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Salary",
+					"item": [
+						{
+							"name": "Assign Salary",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employee_id\": 2,\r\n    \"amount\": 1000,\r\n    \"allowance\": 2000,\r\n    \"effective_date\": \"2024-04-19\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/create-salary/3",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"create-salary",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Salary",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 1000,\r\n    \"allowance\": 2500,\r\n    \"effective_date\": \"2024-04-17\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/update-salary/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"update-salary",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employee Crud",
+					"item": [
+						{
+							"name": "Get All Employees",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{adminURL}}/employees",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Employee",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"new user\",\r\n    \"email\":\"user@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"address\":\"Lahore\",\r\n    \"phone_number\":\"10000812324\",\r\n    \"country\":\"Pakistan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/create-employee",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"create-employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Employee",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{adminURL}}/employee/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"employee",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Employee",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{adminURL}}/delete-employee/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"delete-employee",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/update-employee/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"update-employee",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Restore Employee",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{adminURL}}/restore-employee/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"restore-employee",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Register",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"new\",\r\n    \"email\": \"new@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/register",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Extract and set JWT token\", function () {\r",
+											"    var responseBody = pm.response.json();\r",
+											"    var token = responseBody.data.token;\r",
+											"    pm.environment.set(\"jwt_token\", token);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"alihm@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/login",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{adminURL}}/logout",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RefreshToken",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{adminURL}}/refresh",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true,
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "jwt",
+									"jwt": [
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "algorithm",
+											"value": "HS256",
+											"type": "string"
+										},
+										{
+											"key": "isSecretBase64Encoded",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "payload",
+											"value": "{}",
+											"type": "string"
+										},
+										{
+											"key": "headerPrefix",
+											"value": "Bearer",
+											"type": "string"
+										},
+										{
+											"key": "queryParamKey",
+											"value": "token",
+											"type": "string"
+										},
+										{
+											"key": "header",
+											"value": "{}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/profile",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Profile",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"AliHam\",\r\n    \"email\": \"alihm@gmail.com\",\r\n    \"password\": \"password1\",\r\n    \"password_confirmation\": \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/update-profile/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"update-profile",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forget Password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"user@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/forget-password",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"forget-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"827192\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/reset-password",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Approved Leaves",
+					"item": [
+						{
+							"name": "leave approved",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\" : \"approved\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/leave-approved/1",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"leave-approved",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leaves",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2FkbWluL2xvZ2luIiwiaWF0IjoxNzEzNTM0MDcxLCJleHAiOjE3MTM1Mzc2NzEsIm5iZiI6MTcxMzUzNDA3MSwianRpIjoiVGJIMTJVajgxUmpCTnZvaCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.3_mjsQcTOqQMffhOyUVP9V_UZ7KWo1Cw4-ecQ7rl2fk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{adminURL}}/leave",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"leave"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Department",
+					"item": [
+						{
+							"name": "Create Department",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"React\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/create-department",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"create-department"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Department",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"React Js\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{adminURL}}/update-department/2",
+									"host": [
+										"{{adminURL}}"
+									],
+									"path": [
+										"update-department",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Employee Registeration",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"new\",\r\n    \"email\": \"new@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Lahore\",\r\n    \"phone_number\": \"123456789\",\r\n    \"country\": \"Pakistan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{employeeURL}}/register",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Employee Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Extract and set JWT token\", function () {\r",
+											"    var responseBody = pm.response.json();\r",
+											"    var token = responseBody.data;\r",
+											"    pm.environment.set(\"emp_jwt_token\", token);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"new@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{employeeURL}}/login",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh Token",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{emp_jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{employeeURL}}/refresh",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{emp_jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{employeeURL}}/logout",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Profile",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{emp_jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{employeeURL}}/profile",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee Profile",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{emp_jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ali_don_user\",\r\n    \"department_id\": \"1\",\r\n    \"email\": \"new@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"address\":\"Lahore\",\r\n    \"phone_number\": \"123456780\",\r\n    \"country\": \"Pakistan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{employeeURL}}/update-profile/10",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"update-profile",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{emp_jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"365192\",\r\n    \"password\": \"1010101010\",\r\n    \"password_confirmation\": \"1010101010\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{employeeURL}}/reset-password",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forget password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"new@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{employeeURL}}/forget-password",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"forget-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "View Salary",
+					"item": [
+						{
+							"name": "View Salary",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{emp_jwt_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{employeeURL}}/salary",
+									"host": [
+										"{{employeeURL}}"
+									],
+									"path": [
+										"salary"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Apply leave",
+					"item": [
+						{
+							"name": "Apply Leave",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-04-20\",\r\n    \"end_date\": \"2024-04-21\",\r\n    \"reason\": \"due to brother's weading\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employee/apply-leave/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employee",
+										"apply-leave",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
